@@ -1,4 +1,3 @@
-<script>
         function calculateAge() {
             const dobInput = document.getElementById("dob").value;
             if (dobInput) {
@@ -19,4 +18,4 @@
                 alert("Please select a valid date of birth.");
             }
         }
-    </script>
+  
