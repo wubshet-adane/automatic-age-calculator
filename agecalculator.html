@@ -4,48 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Age Calculator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .calculator {
-            background-color: #f2f2f2;
-            padding: 30px;
-            border-radius: 10px;
-            width: 300px;
-            margin: auto;
-        }
-
-        input, button {
-            margin: 10px;
-            padding: 10px;
-            width: 80%;
-            font-size: 16px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
-        button {
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        .result {
-            margin-top: 20px;
-            font-size: 20px;
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
     <script src="calculator.js"></script>
 </head>
 <body>
-
-    <div class="calculator">
+    <div class="calculator container">
+        <h1>Automatic Age Calculator</h1>
         <h2>Age Calculator</h2>
+        <p>Enter your Date of Birth and click on the button to calculate your age.</p>
+        <p>It will show your age in years, months and days.</p>
         <label for="dob">Enter your Date of Birth:</label><br>
         <input type="date" id="dob" required><br>
         <button onclick="calculateAge()">Calculate Age</button>
