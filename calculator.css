@@ -11,13 +11,15 @@ body {
 }
 
 #start-button {
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 1000;
+    font-size: 2rem;
     width: fit-content;
     position: absolute;
-    top: 50%; /* Center vertically */
+    top: 70%; /* Center vertically */
     left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Offset the element by its own width and height */
+    transform: translateX(-50%); /* Offset the element by its own width and height */
     padding: 10px 20px;
-    font-size: 16px;
     background-color: #4CAF50;
     color: white;
     border: none;
