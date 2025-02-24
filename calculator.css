@@ -7,11 +7,43 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin-top: 50px;
+    position: relative;
 }
 
-#start-button{
-    width:fit-content;
+#start-button {
+    width: fit-content;
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset the element by its own width and height */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+    /* Initial shadow effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    
+    /* Animation */
+    animation: shadowPulse 1.5s infinite alternate;
 }
+
+/* Define the keyframes for the animation */
+@keyframes shadowPulse {
+    0% {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+}
+
 
 .calculator {
     display:none;
