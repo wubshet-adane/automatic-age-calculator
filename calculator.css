@@ -34,16 +34,15 @@ body {
 /* Define the keyframes for the animation */
 @keyframes shadowPulse {
     0% {
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.73);
     }
     50% {
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 8px 20px rgba(255, 255, 255, 0.529);
     }
     100% {
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 10px rgb(255, 255, 255);
     }
 }
-
 
 .calculator {
     display:none;
