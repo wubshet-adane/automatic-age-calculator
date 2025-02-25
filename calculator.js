@@ -1,13 +1,13 @@
     // Add an event listener to the entire document to listen for clicks
-        document.addEventListener('click', function(event) {
-            const result_container = document.getElementById("result-container");
+    document.addEventListener('click', function(event) {
+        const result_container = document.getElementById("result-container");
 
-            // If the clicked element is not the div box, remove it
-            if (result_container.contains(event.target)) {
-                result_container.style.display = "none";
-            }
-        });
-
+        // If the clicked element is outside the result container, hide it
+        if (!result_container.contains(event.target)) {
+            result_container.style.display = "none";
+        }
+    });
+    
        function calculateAge() {
             const dobInput = document.getElementById("dob").value;
             const result_container = document.getElementById("result-container");
