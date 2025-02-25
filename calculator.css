@@ -13,10 +13,10 @@ body {
 #start-button {
     font-family:'Courier New', Courier, monospace;
     font-weight: 1000;
-    font-size: 2rem;
+    font-size: 1.5rem;
     width: fit-content;
     position: absolute;
-    top: 70%; /* Center vertically */
+    bottom:-500px; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Offset the element by its own width and height */
     padding: 10px 20px;
@@ -25,34 +25,70 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    
-    /* Initial shadow effect */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    
-    /* Animation */
-    animation: shadowPulse 1.5s infinite alternate;
+    box-shadow: 0 0 10px rgb(255, 187, 0);
+    box-sizing: border-box;
+}
+#start-button:hover {
+    background-color: white;
+    color: #4CAF50;
+    box-shadow: 0 0 10px #ffffff;
+    border: 5px solid #4CAF50;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
-/* Define the keyframes for the animation */
-@keyframes shadowPulse {
-    0% {
-        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.73);
-    }
-    50% {
-        box-shadow: 0 8px 20px rgba(255, 255, 255, 0.529);
-    }
-    100% {
-        box-shadow: 0 4px 10px rgb(255, 255, 255);
-    }
+#start-button{
+    background-color:#4CAF50;
 }
 
 .calculator {
     display:none;
-    background-color: #f2f2f2;
+    position: relative;
+    background-color: #f0ceffce;
     padding: 30px;
     border-radius: 10px;
-    width: 300px;
+    width: 400px;
     margin: auto;
+}
+
+.yellow{
+    color:yellow;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: 1px 2px black;
+    font-size: 2rem;
+}
+
+.white-blue{
+    color:#00ffb3;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: 1px 2px black;
+    font-size: 2rem;
+}
+
+#birth-year{
+    display: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+}
+
+#close-button{
+    position:absolute;
+    right: 0;
+    top:0;
+    width: fit-content;
+    padding: 2px 6px;
+    border-radius: 50%;
+    background-color: red;
+    font-size:1.5rem;
+    font-weight: 400;
+}
+
+#close-button:hover{
+    color:red;
+    background-color: white;
+    border: 1px solid red;
 }
 
 input, button {
@@ -71,7 +107,13 @@ button {
 }
 
 .result {
+    position: absolute;
+    display: none;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 3px solid blue;
+    border-radius: 10px;
     margin-top: 20px;
-    font-size: 20px;
-    font-weight: bold;
+   background-color: rgb(228, 236, 143);
 }

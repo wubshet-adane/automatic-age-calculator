@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Age Calculator</title>
-    <link rel="stylesheet" href="calculator.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
-    <script src="calculator.js"></script>
-</head>
-<body>
-    <div class="calculator container" id="calc-container">
-        <h1>Automatic Age Calculator</h1>
-        <h2>Age Calculator</h2>
-        <p>Enter your Date of Birth and click on the button to calculate your age.</p>
-        <p>It will show your age in years, months and days.</p>
-        <label for="dob">Enter your Date of Birth:</label><br>
-        <input type="date" id="dob" required><br>
-        <button onclick="calculateAge()">Calculate Age</button>
-        <div class="result" id="result"></div>
-    </div>
-    <button id="start-button">Start Age Calcolation</button>
-
-    
-
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Age Calculator</title>
+        <link rel="stylesheet" href="calculator.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+        <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+        <script src="calculator.js"></script>
+    </head>
+    <body id="body">
+        <div class="calculator container" id="calc-container">
+            <h1>Automatic <span class="yellow"> AGE </span> <span class="white-blue">Calculator</span></h1>
+            <p>Enter your Date of Birth and click on the button to calculate your age.</p>
+            <p>It will show your age in years, months and days.</p>
+            <label for="dob">Enter your Date of Birth:</label><br>
+            <input type="date" id="dob" required><br>
+            <button onclick="calculateAge()">Calculate Age</button>
+            <div class="result" id="result-container">
+                <h2 id="birth-year"><img src='happybirthday.jif.jpg' alt='birthday body'></h2>
+                <h2 id="result"></h2>
+                <h3 id="result-month-and-date"></h3>
+            </div>
+            <button id="close-button" onclick="close_button()">X</button>
+        </div>
+        <button id="start-button" onclick="turnOnCalculator()">Start</button>
+    </body>
 </html>
