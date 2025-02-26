@@ -148,8 +148,10 @@ label {
 }
 
 #result-month-and-date{
+    border: 1px solid #00f008;
+    border-radius: 5px;
+    font-size: 16px;
     font-family: 'Courier New', Courier, monospace;
-    text-emphasis: sesame;
     color: #005e6a;
 }
 
