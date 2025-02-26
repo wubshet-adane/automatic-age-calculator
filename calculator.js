@@ -37,14 +37,32 @@
                     }   
                     else {
 
-                        if (monthDifference > 0 || (monthDifference === 0 && today.getDate() > dob.getDate())) {
+                        if (monthDifference > 0 || (monthDifference === 0 && today.getDate() > dob.getDate()) || (monthDifference === 0 && today.getDate() < dob.getDate())) {
+                            var nextMonth;
+                            var nextDate;
+                            var dateUncertainity;
+                            if(monthDifference > 0 && today.getDate() == dob.getDate()) {
+                                nextMonth = 12 - today.getMonth() + dob.getMonth();
+                                nextDate = 0;
+                                dateUncertainity = "";
+                            }
+                            else if(monthDifference > 0 && today.getDate() < dob.getDate()){
+                                nextMonth = 12 - today.getMonth() + dob.getMonth();
+                                nextDate = dob.getDate() - today.getDate();
+                                dateUncertainity = "plus or minus 2days";
+                            }                                
+                            else{
+                                nextMonth = 12 - today.getMonth() + dob.getMonth() - 1;
+                                nextDate = 30 - today.getDate() + dob.getDate();
+                                dateUncertainity = "plus or minus 2days";
+                            }
                             body.style.backgroundImage = "url('Age-calculator.jpg')"; 
                             birth_year.style.display = "none";
                             result.innerHTML = `You are <span class="highlight">${age}</span> years old.`;
                             const possitiveMonth = Math.abs(monthDifference);
                             document.getElementById("result-month-and-date").style.display = "block";
                             document.getElementById("result-month-and-date").innerHTML = `Your <span class="highlight">${age + 1}<sup>th</sup></span> 
-                            birthday will be after <span class="highlight"> ${possitiveMonth}</span> months and <span class="highlight"> ${date}</span> days.`;
+                            birthday will be after <span class="highlight"> ${nextMonth}</span> months and <span class="highlight"> ${nextDate}</span> days.`;
                         }
                         else{
                             var nextMonth;
@@ -57,7 +75,7 @@
                             }
                             else if(monthDifference < 0 && today.getDate() > dob.getDate()){
                                 nextMonth = 12 - (12 - (dob.getMonth() - today.getMonth())) - 1;
-                                nextDate = today.getDate()- dob.getDate();
+                                nextDate = 30 - today.getDate() + dob.getDate();
                                 dateUncertainity = "plus or minus 2days";
                             }                                
                             else{
