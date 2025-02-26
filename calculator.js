@@ -25,14 +25,14 @@
                     body.style.backgroundImage = "url('Age-Calculator.jpg')";
                     document.getElementById("dob").style.border = "1px solid red";
                     warning.style.display = "block";
-                    warning.textContent = "pleace enter birth date that was one year ago!"
+                    warning.textContent = "pleace enter birth date before today!"
                 } 
                 
                 else {
                     if (monthDifference == 0 && today.getDate() == dob.getDate()) {
                         body.style.backgroundImage = "url('birthday body.jpg')"; 
                         birth_year.style.display = "block";
-                        result.textContent = `You are ${age} years old.`;
+                        result.innerHTML = `You are <span class="highlight">${age}</span> years old.`;
                         document.getElementById("result-month-and-date").style.display = "none";
                     }   
                     else {
@@ -40,11 +40,11 @@
                         if (monthDifference > 0 || (monthDifference === 0 && today.getDate() > dob.getDate())) {
                             body.style.backgroundImage = "url('Age-calculator.jpg')"; 
                             birth_year.style.display = "none";
-                            result.textContent = "You are " + age + " years old.";
+                            result.innerHTML = `You are <span class="highlight">${age}</span> years old.`;
                             const possitiveMonth = Math.abs(monthDifference);
                             document.getElementById("result-month-and-date").style.display = "block";
-                            document.getElementById("result-month-and-date").textContent =
-                            `Your ${age + 1} th birth day will be after ${possitiveMonth}  months and  ${date} days.`;
+                            document.getElementById("result-month-and-date").innerHTML = `Your <span class="highlight">${age + 1}<sup>th</sup></span> 
+                            birthday will be after <span class="highlight"> ${possitiveMonth}</span> months and <span class="highlight"> ${date}</span> days.`;
                         }
                         else{
                             var nextMonth;
@@ -55,6 +55,11 @@
                                 nextDate = 0;
                                 dateUncertainity = "";
                             }
+                            else if(monthDifference < 0 && today.getDate() > dob.getDate()){
+                                nextMonth = 12 - dob.getMonth() + today.getMonth();
+                                nextDate = today.getDate()- dob.getDate();
+                                dateUncertainity = "";
+                            }                                
                             else{
                                 nextMonth = (12 - dob.getMonth() + today.getMonth()) -1;
                                 nextDate = 30 - dob.getDate() + today.getDate();
@@ -63,10 +68,10 @@
 
                             body.style.backgroundImage = "url('Age-calculator.jpg')"; 
                             birth_year.style.display = "none";
-                            result.textContent = `You are ${age-1} years old.`;
+                            result.innerHTML = `You are <span class="highlight">${age-1}</span> years old.`;
                             document.getElementById("result-month-and-date").style.display = "block";
-                            document.getElementById("result-month-and-date").textContent =
-                            `Your ${age} th birth day will be after ${nextMonth}  months and  ${nextDate} ${dateUncertainity} days.`;
+                            document.getElementById("result-month-and-date").innerHTML = `Your <span class="highlight">${age}<sup>th</sup></span>
+                             birth day will be after <span class="highlight">${nextMonth}</span> months and  <span class="highlight">${nextDate} ${dateUncertainity}</span> days.`;
                         }
                     }
                 }                
@@ -74,7 +79,8 @@
             
             else {
                 result_container.style.display = "none";
-                alert("Please select a valid date of birth.");
+                warning.style.display = "block";
+                warning.textContent = "Please select a valid date of birth.";
             }
         }
         function turnOnCalculator(){
