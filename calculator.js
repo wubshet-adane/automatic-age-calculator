@@ -56,13 +56,13 @@
                                 dateUncertainity = "";
                             }
                             else if(monthDifference < 0 && today.getDate() > dob.getDate()){
-                                nextMonth = 12 - dob.getMonth() + today.getMonth();
+                                nextMonth = 12 - (12 - (dob.getMonth() - today.getMonth())) - 1;
                                 nextDate = today.getDate()- dob.getDate();
-                                dateUncertainity = "";
+                                dateUncertainity = "plus or minus 2days";
                             }                                
                             else{
-                                nextMonth = (12 - dob.getMonth() + today.getMonth()) -1;
-                                nextDate = 30 - dob.getDate() + today.getDate();
+                                nextMonth = 12 - (12 - (dob.getMonth() - today.getMonth()));
+                                nextDate = dob.getDate() - today.getDate();
                                 dateUncertainity = "plus or minus 2days";
                             }
 
