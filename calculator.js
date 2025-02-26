@@ -55,6 +55,7 @@
                                 nextMonth = 0;
                                 nextDate = dob.getDate() - today.getDate();
                                 dateUncertainity = "plus or minus 2days";
+                                age--;
                             }                             
                             else{
                                 nextMonth = 12 - today.getMonth() + dob.getMonth() - 1;
