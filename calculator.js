@@ -50,7 +50,12 @@
                                 nextMonth = 12 - today.getMonth() + dob.getMonth();
                                 nextDate = dob.getDate() - today.getDate();
                                 dateUncertainity = "plus or minus 2days";
-                            }                                
+                            }   
+                            else if(monthDifference === 0 && today.getDate() < dob.getDate()){
+                                nextMonth = 0;
+                                nextDate = dob.getDate() - today.getDate();
+                                dateUncertainity = "plus or minus 2days";
+                            }                             
                             else{
                                 nextMonth = 12 - today.getMonth() + dob.getMonth() - 1;
                                 nextDate = 30 - today.getDate() + dob.getDate();
@@ -64,6 +69,7 @@
                             document.getElementById("result-month-and-date").innerHTML = `Your <span class="highlight">${age + 1}<sup>th</sup></span> 
                             birthday will be after <span class="highlight"> ${nextMonth}</span> months and <span class="highlight"> ${nextDate}</span> days.`;
                         }
+                        
                         else{
                             var nextMonth;
                             var nextDate;
