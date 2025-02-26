@@ -61,12 +61,12 @@
                                 dateUncertainity = "plus or minus 2days";
                             }
 
-                                body.style.backgroundImage = "url('Age-calculator.jpg')"; 
-                                birth_year.style.display = "none";
-                                result.textContent = `You are ${age-1} years old.`;
-                                document.getElementById("result-month-and-date").style.display = "block";
-                                document.getElementById("result-month-and-date").textContent =
-                                `Your ${age} th birth day will be after ${nextMonth}  months and  ${nextDate} ${dateUncertainity} days.`;
+                            body.style.backgroundImage = "url('Age-calculator.jpg')"; 
+                            birth_year.style.display = "none";
+                            result.textContent = `You are ${age-1} years old.`;
+                            document.getElementById("result-month-and-date").style.display = "block";
+                            document.getElementById("result-month-and-date").textContent =
+                            `Your ${age} th birth day will be after ${nextMonth}  months and  ${nextDate} ${dateUncertainity} days.`;
                         }
                     }
                 }                
