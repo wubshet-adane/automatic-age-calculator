@@ -6,45 +6,60 @@
             const birth_year = document.getElementById("birth-year");
 
             result_container.style.display = "block";
+            document.getElementById("dob").style.border = "1px solid green";
+            const warning = document.getElementById("warning");
+            warning.style.display = "none";
+
+
             if (dobInput) {
                 const dob = new Date(dobInput);
                 const today = new Date();
-                const warning = document.getElementById("warning");
                 
                 let age = today.getFullYear() - dob.getFullYear();
+                age--;
                 const monthDifference = today.getMonth() - dob.getMonth();
                 let date = today.getDate() - dob.getDate();
+                const result = document.getElementById("result");
                 
-                if (age < 0) {
+                if (age < 0 || (age === 0 && monthDifference < 0) ||  (age === 0 && monthDifference === 0 && date < 0)) {
+                    result_container.style.display = "none";
+                    body.style.backgroundImage = "url('Age-Calculator.jpg')";
                     document.getElementById("dob").style.border = "1px solid red";
-                    warning.textContent = "pleace enter birth date lessthan today!"
-                } else {
-                    // Adjust age if birthday has not occurred yet this year
-                    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < dob.getDate())) {
-                        age--;
-                    }
+                    warning.style.display = "block";
+                    warning.textContent = "pleace enter birth date that was one year ago!"
+                } 
+                
+                else {
+
                     if (monthDifference == 0 && today.getDate() == dob.getDate()) {
                         body.style.backgroundImage = "url('birthday body.jpg')"; 
                         birth_year.style.display = "block";
-                    } else {
+                        result.textContent = `You are ${age + 1} years old.`;
+                        document.getElementById("result-month-and-date").style.display = "none";
+                    }
+                    
+                    else {
                         body.style.backgroundImage = "url('Age-calculator.jpg')"; 
                         birth_year.style.display = "none";
-                        document.getElementById("result").textContent = "You are " + age + " years old.";
-                        age = age + 1;
+                        result.textContent = "You are " + age + " years old.";
                         const possitiveMonth = Math.abs(monthDifference);
-                        document.getElementById("result-month-and-date").textContent = "Your " + age +"th birth day will be after " + possitiveMonth + " months and " + date + " days.";
+                        document.getElementById("result-month-and-date").style.display = "block";
+                        document.getElementById("result-month-and-date").textContent =
+                         `Your ${age + 1} th birth day will be after ${possitiveMonth}  months and  ${date} days.`;
                     }
-                }
-                
-            } else {
+                }                
+            } 
+            
+            else {
+                result_container.style.display = "none";
                 alert("Please select a valid date of birth.");
             }
         }
         function turnOnCalculator(){
             const onButton = document.getElementById("start-button");
             const calculatorForm = document.querySelector(".calculator");
-                calculatorForm.style.display = "block";
-                onButton.style.display = "none";
+            calculatorForm.style.display = "block";
+            onButton.style.display = "none";
         }
         function close_button(){
             const calculatorForm = document.querySelector(".calculator");
@@ -52,4 +67,10 @@
             calculatorForm.style.display = "none";
             onButton.style.display = "block";
         }
-  
+        function turnOffDisplay(){
+            const result_container = document.getElementById("result-container");
+            const dob = document.getElementById("dob");
+            dob.addEventListener("click", function(event){
+                result_container.style.display = "none";
+            });
+        }
