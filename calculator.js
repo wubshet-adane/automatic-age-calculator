@@ -51,7 +51,7 @@
                             var nextDate;
                             var dateUncertainity;
                             if(monthDifference < 0 && today.getDate() == dob.getDate()) {
-                                nextMonth = 12 - dob.getMonth() + today.getMonth();
+                                nextMonth = 12 - (12 - (dob.getMonth() - today.getMonth()));
                                 nextDate = 0;
                                 dateUncertainity = "";
                             }
