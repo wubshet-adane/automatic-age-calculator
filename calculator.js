@@ -36,7 +36,8 @@
                         document.getElementById("result-month-and-date").style.display = "none";
                     }   
                     else {
-
+                        body.style.backgroundImage = "url('Age-calculator.jpg')"; 
+                        
                         if (monthDifference > 0 || (monthDifference === 0 && today.getDate() > dob.getDate()) || (monthDifference === 0 && today.getDate() < dob.getDate())) {
                             var nextMonth;
                             var nextDate;
@@ -62,7 +63,6 @@
                                 nextDate = 30 - today.getDate() + dob.getDate();
                                 dateUncertainity = "plus or minus 2days";
                             }
-                            body.style.backgroundImage = "url('Age-calculator.jpg')"; 
                             birth_year.style.display = "none";
                             result.innerHTML = `You are <span class="highlight">${age}</span> years old.`;
                             const possitiveMonth = Math.abs(monthDifference);
@@ -91,7 +91,6 @@
                                 dateUncertainity = "plus or minus 2days";
                             }
 
-                            body.style.backgroundImage = "url('Age-calculator.jpg')"; 
                             birth_year.style.display = "none";
                             result.innerHTML = `You are <span class="highlight">${age-1}</span> years old.`;
                             document.getElementById("result-month-and-date").style.display = "block";
