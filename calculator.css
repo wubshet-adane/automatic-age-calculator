@@ -167,6 +167,8 @@ label {
     font-size: 16px;
     font-family: 'Courier New', Courier, monospace;
     color: #005e6a;
+    background-color: #f2ff008f;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
 }
 
 #warning{
