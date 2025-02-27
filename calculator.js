@@ -108,15 +108,19 @@
             }
         }
         function turnOnCalculator(){
+            const overlay = document.getElementById("overlay");
             const onButton = document.getElementById("start-button");
             const calculatorForm = document.querySelector(".calculator");
             calculatorForm.style.display = "block";
+            overlay.style.display = "none";
             onButton.style.display = "none";
         }
         function close_button(){
+            const overlay = document.getElementById("overlay");
             const calculatorForm = document.querySelector(".calculator");
             const onButton = document.getElementById("start-button");
             calculatorForm.style.display = "none";
+            overlay.style.display = "block";
             onButton.style.display = "block";
         }
         function turnOffDisplay(){

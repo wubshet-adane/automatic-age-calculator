@@ -10,6 +10,15 @@ body {
     position: relative;
 }
 
+#overlay{
+    text-align: center;
+    background: linear-gradient(45deg, #000000, #11ff00, #00ffb7, #ff005d, #fffb00);
+    color: transparent;
+    background-clip: text;
+    font-size: 2rem;
+    text-shadow: -2px -2px 2px rgba(89, 206, 0, 0.689);
+}
+
 .watch {
     border-radius: 50%;
     width: 130px;
@@ -24,35 +33,31 @@ body {
     font-size: 1.5rem;
     width: fit-content;
     position: absolute;
-    bottom:-500px; /* Center vertically */
+    top:400px; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Offset the element by its own width and height */
     padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: no1px solid #f2ff00;
+    background-color: #f2ff00;
+    color: rgb(0, 0, 0);
+    outline: 3px solid #ff00ee;
     border-radius: 5px;
     cursor: pointer;
-    box-shadow: 0 0 10px rgb(255, 187, 0);
+    box-shadow: 0 0 10px rgb(0, 0, 0);
     box-sizing: border-box;
 }
 #start-button:hover {
-    background-color: white;
-    color: #4CAF50;
-    box-shadow: 0 0 10px #ffffff;
+    background-color: rgb(0, 0, 0);
+    color: #f2ff00;
+    box-shadow: 0 0 10px #000000;
     border: 5px solid #4CAF50;
     border-radius: 5px;
     box-sizing: border-box;
 }
 
-#start-button{
-    background-color:#4CAF50;
-}
-
 .calculator {
     display:none;
     position: relative;
-    background: linear-gradient(to bottom, #4CAF50, #f2ff00);
+    background: linear-gradient(to bottom, #4c84af, #f2ff00);
     padding: 10px;
     border-radius: 10px;
     width: 400px;
@@ -94,15 +99,18 @@ body {
     width: fit-content;
     padding: 2px 6px;
     border-radius: 50%;
-    background-color: red;
+    background-color: white;
+    color:red;
     font-size:1.5rem;
     font-weight: 400;
+    border:none;
+    box-shadow: 1px 1px 10px rgb(255, 255, 255);
 }
 
 #close-button:hover{
-    color:red;
-    background-color: white;
-    border: 1px solid red;
+    color:white;
+    background-color: red;
+   
 }
 
 input, button {
